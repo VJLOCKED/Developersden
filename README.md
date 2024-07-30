@@ -1,5 +1,2 @@
 # Developersden
 
-HI guyz
-
-hii
