@@ -1,0 +1,52 @@
+.courseCard {
+    background-color: #2A2A2A; /* Dark card background */
+    border-radius: 8px;
+    padding: 20px;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    /* overflow: hidden; */
+  }
+  
+  .courseCard h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .courseCard p {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .progressBar {
+    background-color: #404040; /* Dark progress bar background */
+    border-radius: 4px;
+    height: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .progress {
+    background-color: #6C63FF; /* Matching the blue color */
+    height: 10px;
+    border-radius: 4px;
+  }
+  
+  .progressText {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  
+  .continueButton {
+    background-color: #FFB800; /* Matching the yellow button */
+    color: #2A2A2A;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .continueButton:hover {
+    background-color: #e0a700;
+  }
