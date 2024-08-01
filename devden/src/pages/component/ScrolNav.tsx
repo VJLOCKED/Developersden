@@ -7,35 +7,35 @@ const ScrolNav: React.FC = () => {
     <div className={styles.sidebar}>
       <div className={styles.logo}>Developersden</div>
       <nav>
-        <ul>
-          <li>
+        <ul className={styles.nav}>
+          <li className={styles.navItem}>
             <Link href="/" legacyBehavior>
-              <a>Home</a>
+              <a className={styles.navLink}>Home</a>
             </Link>
           </li>
-          <li>
+          <li className={styles.navItem}>
             <Link href="/javascript/basics" legacyBehavior>
-              <a>Javascript Basics (0/111)</a>
+              <a className={styles.navLink}>Javascript Basics (0/111)</a>
             </Link>
           </li>
-          <li>
+          <li className={styles.navItem}>
             <Link href="/javascript/dom" legacyBehavior>
-              <a>Javascript DOM (0/19)</a>
+              <a className={styles.navLink}>Javascript DOM (0/19)</a>
             </Link>
           </li>
-          <li>
+          <li className={styles.navItem}>
             <Link href="/javascript/practice" legacyBehavior>
-              <a>Javascript Practice (0/80)</a>
+              <a className={styles.navLink}>Javascript Practice (0/80)</a>
             </Link>
           </li>
-          <li>
+          <li className={styles.navItem}>
             <Link href="/javascript/challenge-rush" legacyBehavior>
-              <a>Challenge Rush</a>
+              <a className={styles.navLink}>Challenge Rush</a>
             </Link>
           </li>
-          <li>
+          <li className={styles.navItem}>
             <Link href="/javascript/login" legacyBehavior>
-              <a>Login</a>
+              <a className={styles.navLink}>Login</a>
             </Link>
           </li>
         </ul>

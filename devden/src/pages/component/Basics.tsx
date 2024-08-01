@@ -1,4 +1,3 @@
-// src/app/components/Basics.tsx
 import React from "react";
 import CourseCard from "./CourseCard";
 import PremiumAd from "./PremiumAd"; 

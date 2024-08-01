@@ -1,40 +1,36 @@
 .sidebar {
-  width: 250px;
-  background-color: #2b2f3a;
-  padding: 20px;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   position: fixed;
-  height: 100%;
-  overflow-y: auto;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 250px; 
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
 }
 
 .logo {
-  font-size: 1.5em;
-  font-weight: bold;
-  color: #f4b400;
+  font-size: 1.5rem;
   margin-bottom: 20px;
 }
 
-.sidebar nav ul {
-  color: white;
+.nav {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
-.sidebar nav ul li {
-  margin: 15px 0;
-  cursor: pointer;
+.navItem {
+  margin: 10px 0;
 }
 
-.sidebar nav ul li:hover {
-  color: #f4b400;
-}
-
-
-.sidebar nav ul li a {
+.navLink {
+  color: #fff;
   text-decoration: none;
-  color: inherit;
-  display: block;
-  padding: 10px 15px;
-  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.navLink:hover {
+  text-decoration: underline;
 }
