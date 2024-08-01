@@ -1,0 +1,151 @@
+/* src/styles/Home.module.css */
+.body{
+    overflow: hidden;
+
+}
+
+
+
+.homeContainer {
+    background-color: #0a1e30;
+    color: #fbbf24;
+    /* min-height: 100vh; */
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.content {
+    margin-left: 250px;
+    padding: 20px;
+    overflow-y: auto;
+    height: 100vh;
+    width: calc(100% - 250px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box; 
+     /* overflow: hidden; */
+      /* display: flex; */
+  /* flex-direction: column; */
+  /* align-items: center; */
+  /* width: 100%; */
+  height: calc(100vh - 40px); /*Adjusting for the padding */
+}
+
+.intro {
+    text-align: center;
+}
+
+.title {
+    margin-top: 20px;
+    margin-bottom: 20%;
+    align-self: flex-start;
+    font-size: 36px;
+    font-weight: bold;
+    color: #fbbf24;
+}
+
+.intro h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.cardsContainer {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.card {
+    background-color: #1e3256;
+    color: #e5e9f0;
+    padding: 20px;
+    border-radius: 5px;
+    flex: 1 1 calc(33% - 40px);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-width: 250px;
+    box-sizing: border-box;
+}
+
+.card1 h2 {
+    color: #a5b4fc;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-family: "Gill Sans", sans-serif;
+}
+
+.card2 h2 {
+    color: #fca5a5;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-family: "Gill Sans", sans-serif;
+}
+
+.card3 h2 {
+    color: #86efac;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-family: "Gill Sans", sans-serif;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.learningPath {
+    margin-top: 8%;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #f8c227;
+}
+
+.startButton {
+    margin-top: 2%;
+    margin-bottom: 5%;
+    padding: 10px 15%;
+    background-color: #f8c227;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #0a1e30;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.startButton:hover {
+    background-color: #f9d64e;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .content {
+        margin-left: 0;
+        width: 100%;
+        padding: 10px;
+        height: auto;
+    }
+
+    .cardsContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+}
