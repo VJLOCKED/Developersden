@@ -1,12 +1,12 @@
 import React from "react";
-import "./PemiumAd.css";
+import styles from "../../styles/PemiumAd.module.css";
 
 const PremiumAd: React.FC = () => {
   return (
-    <div className="premiumAdContainer">
-      <div className="premiumAd">
+    <div className={styles.premiumAdContainer}>
+      <div className={styles.premiumAd}>
         <h1>
-          Developersden <span className="premiumTag">PREMIUM</span>
+          Developersden <span className={styles.premiumTag}>PREMIUM</span>
         </h1>
         <ul>
           <li>Save your progress in the cloud</li>
@@ -15,7 +15,7 @@ const PremiumAd: React.FC = () => {
           <li>No advertisements</li>
           <li>Cancel anytime</li>
         </ul>
-        <button className="goPremiumButton">Go Premium</button>
+        <button className={styles.goPremiumButton}>Go Premium</button>
       </div>
     </div>
   );
