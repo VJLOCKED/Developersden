@@ -5,9 +5,9 @@ import "../styles/globals.css"; // Ensure you have global styles
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
-    <div style={{ display: "flex" }}>
+    <div className="container">
       <ScrolNav />
-      <main style={{ flex: 1, padding: "20px" }}>
+      <main className="main-content">
         <Component {...pageProps} />
       </main>
     </div>

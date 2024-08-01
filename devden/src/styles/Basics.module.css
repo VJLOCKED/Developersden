@@ -1,21 +1,16 @@
 .appContainer {
+    padding: 20px;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: 10%;
-    background-color: #1e3256;
-    /* overflow: hidden; */
+    flex-direction: column;
   }
   
   .courses {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
-    flex: 1; /* Allows courses to take up available space */
-    margin-right: 20px; /* Gap between courses and premium ad */
+    justify-content: space-around;
+    flex-wrap: wrap;
   }
   
-  .premium-ad-container {
-    flex: 0 1 300px; /* Fixed width for premium ad */
+  .premiumAd {
+    margin-top: 20px;
   }
+  
