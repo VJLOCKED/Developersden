@@ -1,12 +1,13 @@
+// src/app/components/Basics.tsx
 import React from "react";
 import CourseCard from "./CourseCard";
-import PremiumAd from "./PremiumAd";
-import './Basics.css';
+import PremiumAd from "./PremiumAd"; 
+import styles from '../../styles/Basics.module.css';
 
 const Basics: React.FC = () => {
   return (
-    <div className="appContainer">
-      <div className="courses">
+    <div className={styles.appContainer}>
+      <div className={styles.courses}>
         <CourseCard
           title="JavaScript Basics"
           description="Interactive lessons and exercises to learn JavaScript"
@@ -26,7 +27,7 @@ const Basics: React.FC = () => {
           icon="💻"
         />
       </div>
-      <div className="premiumAd">
+      <div className={styles.premiumAd}>
         <PremiumAd />
       </div>
     </div>

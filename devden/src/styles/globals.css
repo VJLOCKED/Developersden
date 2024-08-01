@@ -1,3 +1,4 @@
+/* styles/globals.css */
 body, html {
   margin: 0;
   padding: 0;
@@ -15,4 +16,3 @@ overflow: hidden;
   height: 100vh;
   overflow: hidden; /* Prevent overflow on the app container */
 }
-

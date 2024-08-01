@@ -1,5 +1,5 @@
 import React from "react";
-import "./CourseCard.css";
+import styles from "../../styles/CourseCard.module.css";
 
 interface CourseCardProps {
   title: string;
@@ -15,16 +15,16 @@ const CourseCard: React.FC<CourseCardProps> = ({
   icon,
 }) => {
   return (
-    <div className="courseCard">
+    <div className={styles.courseCard}>
       <h2>
         {icon} {title}
       </h2>
       <p>{description}</p>
-      <div className="progressBar">
-        <div className="progress" style={{ width: "0%" }}></div>
+      <div className={styles.progressBar}>
+        <div className={styles.progress} style={{ width: "0%" }}></div>
       </div>
-      <p className="progressText">{progress}</p>
-      <button className="continueButton">Continue</button>
+      <p className={styles.progressText}>{progress}</p>
+      <button className={styles.continueButton}>Continue</button>
     </div>
   );
 };
