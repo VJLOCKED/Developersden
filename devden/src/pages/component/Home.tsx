@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import Basics from "./Basics";
 import styles from "../../styles/Home.module.css";
+import Modelpage from '../component/Modelpage';
 
-const Welcome: React.FC = () => {
+
+const Welcome = () => {
+  const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <div className={styles.homeContainer}>
       <div className={styles.content}>
@@ -23,10 +35,11 @@ const Welcome: React.FC = () => {
             </div>
           </div>
           <p className={styles.learningPath}>Start your learning path here</p>
-          <button className={styles.startButton}>Start</button>
+          <button className={styles.startButton} onClick={handleClickOpen}>Start</button>
         </div>
         <Basics />
       </div>
+            <Modelpage open={open} handleClose={handleClose} />
     </div>
   );
 };
