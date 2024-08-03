@@ -14,7 +14,12 @@ import {
 import Link from "next/link";
 import styles from "../../styles/Modelpage.module.css";
 
-const Modelpage = ({ open, handleClose }) => {
+interface ModelpageProps {
+  open: boolean;
+  handleClose: () => void;
+}
+
+const Modelpage: React.FC<ModelpageProps> = ({ open, handleClose }) => {
   const router = useRouter();
 
   const handleClickOpen = () => {

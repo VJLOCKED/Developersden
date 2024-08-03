@@ -7,7 +7,7 @@ const Login = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [message, setMessage] = useState("");
 
-  function handleData(e) {
+  function handleData(e: { target: { name: any; value: any; type: any; checked: any; }; }) {
     const { name, value, type, checked } = e.target;
     setInputData({
       ...inputData,
@@ -15,7 +15,7 @@ const Login = () => {
     });
   }
 
-  function handleSubmit(e) {
+  function handleSubmit(e: { preventDefault: () => void; }) {
     e.preventDefault();
     if (isLogin) {
       // Mock login validation
