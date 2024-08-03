@@ -1,0 +1,112 @@
+/* components/ProgressList.module.css */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #0a1e30;
+    color: #fff;
+  }
+  
+  .item {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    position: relative;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .circleContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-right: 20px;
+  }
+  
+  .circle {
+    width: 5rem;
+    height: 5rem;
+    border: 2px solid #64ffda;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    z-index: 1;
+    background-color: #0a192f;
+  }
+  
+  .line {
+    width: 2px;
+    height: 60px;
+    background-color: #64ffda;
+    position: absolute;
+    top: 50px;
+    z-index: 0;
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    max-width: 350px; /* Adjust this value to control the wrapping */
+    word-wrap: break-word;
+    margin-top: 5px;
+  }
+  
+  .content h2 {
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  .content p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #8892b0;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      padding: 10px;
+    }
+  
+    .item {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .circleContainer {
+      margin-bottom: 10px;
+    }
+  
+    .circle {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  
+    .content {
+      margin-left: 0;
+      text-align: center;
+      max-width: 100%;
+    }
+  
+    .content h2 {
+      font-size: 16px;
+    }
+  
+    .content p {
+      font-size: 12px;
+    }
+  }
+  

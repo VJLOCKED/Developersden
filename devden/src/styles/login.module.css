@@ -4,6 +4,7 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
+    margin: 0 auto;
   }
   
   .switchButton {
@@ -16,7 +17,7 @@
   
   .switchOuter {
     height: 100%;
-    background: #252532;
+    background: #1a1a2e;
     width: 115px;
     border-radius: 165px;
     box-shadow: inset 0px 5px 10px 0px #16151c, 0px 3px 6px -2px #403f4e;
@@ -88,10 +89,29 @@
   }
   
   .cardSwitch {
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    animation: fadeInUp 0.5s ease-in-out; 
     position: relative;
-    width: 300px;
+    margin-bottom: 20%;
+    /* width: 300px;
     height: 400px;
-    margin-top: 20px;
+    margin-top: 20px; */
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   
   .title {
@@ -99,17 +119,18 @@
     font-size: 24px;
     font-weight: bold;
     margin-top: 20px;
+    color: #1a1a2e;
   }
   
   .flipCardForm {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 30px;
+    margin-top: 20px;
   }
   
   .flipCardInput {
-    width: 80%;
+    width: 100%;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
@@ -133,6 +154,8 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease-in-out; 
+  width: 100%;
   }
   
   .flipCardBtn:hover {

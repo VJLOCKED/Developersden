@@ -1,7 +1,7 @@
 import React from "react";
 import CourseCard from "./CourseCard";
-import PremiumAd from "./PremiumAd"; 
-import styles from '../../styles/Basics.module.css';
+import PremiumAd from "./PremiumAd";
+import styles from "../../styles/Basics.module.css";
 
 const Basics: React.FC = () => {
   return (
@@ -12,18 +12,21 @@ const Basics: React.FC = () => {
           description="Interactive lessons and exercises to learn JavaScript"
           progress="0/111"
           icon="📚"
+          path="/javascript/basics"
         />
         <CourseCard
           title="JavaScript DOM Exercises"
           description="Create interactive and dynamic websites"
           progress="0/19"
           icon="🖱️"
+          path="/javascript/dom"
         />
         <CourseCard
           title="JavaScript Practice"
           description="Challenges to practice your skills"
           progress="0/80"
           icon="💻"
+          path="/javascript/practice"
         />
       </div>
       <div className={styles.premiumAd}>

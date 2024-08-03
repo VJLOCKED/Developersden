@@ -1,4 +1,4 @@
-/* Reset default margins and paddings */
+
 * {
   margin: 0;
   padding: 0;
@@ -6,6 +6,7 @@
 }
 
 body {
+  background-color: #0a1e30;
   font-family: Arial, sans-serif;
 }
 
