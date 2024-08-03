@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
-import styles from '../../styles/login.module.css';
+import React, { useState } from "react";
+import styles from "../../styles/login.module.css";
 
 const Login = () => {
-  const initialData = { name: '', email: '', password: '', remember: false };
+  const initialData = { name: "", email: "", password: "", remember: false };
   const [inputData, setInputData] = useState(initialData);
   const [isLogin, setIsLogin] = useState(true);
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState("");
 
   function handleData(e) {
     const { name, value, type, checked } = e.target;
     setInputData({
       ...inputData,
-      [name]: type === 'checkbox' ? checked : value,
+      [name]: type === "checkbox" ? checked : value,
     });
   }
 
@@ -19,17 +19,17 @@ const Login = () => {
     e.preventDefault();
     if (isLogin) {
       // Mock login validation
-      if (inputData.email === ' ' && inputData.password === ' ') {
-        setMessage('Login successful');
+      if (inputData.email === " " && inputData.password === " ") {
+        setMessage("Login successful");
       } else {
-        setMessage('Incorrect email or password');
+        setMessage("Incorrect email or password");
       }
     } else {
       // Mock sign-up logic
       if (inputData.name && inputData.email && inputData.password) {
-        setMessage('Sign up successful');
+        setMessage("Sign up successful");
       } else {
-        setMessage('Please fill all fields');
+        setMessage("Please fill all fields");
       }
     }
   }
@@ -43,7 +43,7 @@ const Login = () => {
             type="checkbox"
             onChange={() => {
               setIsLogin(!isLogin);
-              setMessage('');
+              setMessage("");
               setInputData(initialData);
             }}
           />
@@ -55,7 +55,7 @@ const Login = () => {
       </label>
       <div className={styles.cardSwitch}>
         <div className={isLogin ? styles.flipCardFront : styles.flipCardBack}>
-          <div className={styles.title}>{isLogin ? 'Log in' : 'Sign up'}</div>
+          <div className={styles.title}>{isLogin ? "Log in" : "Sign up"}</div>
           <form className={styles.flipCardForm} onSubmit={handleSubmit}>
             {!isLogin && (
               <input
@@ -96,7 +96,7 @@ const Login = () => {
               </div>
             )}
             <button className={styles.flipCardBtn} type="submit">
-              {isLogin ? `Let's go!` : 'Confirm!'}
+              {isLogin ? `Let's go!` : "Confirm!"}
             </button>
           </form>
         </div>

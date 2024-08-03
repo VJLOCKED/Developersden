@@ -1,4 +1,5 @@
 import React from "react";
+import { useRouter } from "next/router";
 import styles from "../../styles/CourseCard.module.css";
 
 interface CourseCardProps {
@@ -6,6 +7,7 @@ interface CourseCardProps {
   description: string;
   progress: string;
   icon: string;
+  path: string;
 }
 
 const CourseCard: React.FC<CourseCardProps> = ({
@@ -13,7 +15,13 @@ const CourseCard: React.FC<CourseCardProps> = ({
   description,
   progress,
   icon,
+  path,
 }) => {
+  const router = useRouter();
+
+  const handleButtonClick = () => {
+    router.push(path);
+  };
   return (
     <div className={styles.courseCard}>
       <h2>
@@ -24,7 +32,9 @@ const CourseCard: React.FC<CourseCardProps> = ({
         <div className={styles.progress} style={{ width: "0%" }}></div>
       </div>
       <p className={styles.progressText}>{progress}</p>
-      <button className={styles.continueButton}>Continue</button>
+      <button className={styles.continueButton} onClick={handleButtonClick}>
+        Continue
+      </button>
     </div>
   );
 };
