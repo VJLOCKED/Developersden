@@ -17,7 +17,7 @@ console.log(reverseString('hello')); // Expected output: 'olleh'`);
     try {
       const userFunction = new Function(code + '; return reverseString;');
       const reverseString = userFunction();
-
+  
       const testCases = ['hello', 'world', 'JavaScript', 'OpenAI'];
       let result = '';
       testCases.forEach(testCase => {
@@ -27,9 +27,14 @@ console.log(reverseString('hello')); // Expected output: 'olleh'`);
       });
       setOutput(result);
     } catch (error) {
-      setOutput('Error: ' + error.message);
+      if (error instanceof Error) {
+        setOutput('Error: ' + error.message);
+      } else {
+        setOutput('Error: Unknown error');
+      }
     }
   };
+  
 
   return (
     <div className={styles.challenge}>
