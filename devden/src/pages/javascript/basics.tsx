@@ -3,6 +3,7 @@ import Link from "next/link";
 import styles from "../../styles/basic.module.css";
 
 const JavascriptBasics: React.FC = () => {
+
   const items = [
     {
       label: "Variables",
@@ -55,13 +56,13 @@ const JavascriptBasics: React.FC = () => {
       label: "Loops",
       progress: "0/6",
       description:
-        "This series of jvascript exercises cover the basics of using loops in javascript including fo and while loops, as well s how to contol the flow of a loop with break and continue statements.",
+        "This series of javascript exercises cover the basics of using loops in javascript including fo and while loops, as well s how to contol the flow of a loop with break and continue statements.",
     },
     {
       label: "Scope",
       progress: "0/9",
       description:
-        "Learn about scopes in javscript. Topics include function scope, block scope, global scope, and scope heirachy.",
+        "Learn about scopes in javascript. Topics include function scope, block scope, global scope, and scope heirachy.",
     },
     {
       label: "Functions II",
@@ -78,7 +79,9 @@ const JavascriptBasics: React.FC = () => {
   ];
 
   return (
-    <Link href="/concept/Variables" legacyBehavior>
+  
+     <Link href="/concept/Variables" legacyBehavior>
+      
       <div className={styles.container}>
         {items.map((item, index) => (
           <div key={index} className={styles.item}>
