@@ -1,0 +1,43 @@
+.textComponent {
+    background-color: #0A0A23; /* Same as container background */
+    color: #FFDD00; /* Text color */
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 40px auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .text {
+    font-size: 18px;
+    color: #C0C0C0; /* Text color for paragraphs */
+    margin-bottom: 30px;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    background-color: #FFAC47;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #FF9021;
+  }
+  
+  .output {
+    background-color: #1E1E1E; /* Background for any code output */
+    color: #FFDD00; /* Output text color */
+    padding: 10px;
+    border-radius: 4px;
+    white-space: pre-wrap; /* Preserve formatting */
+    width: 100%;
+    overflow: auto;
+  }
+  

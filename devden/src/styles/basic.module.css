@@ -110,3 +110,12 @@
     }
   }
   
+  .link {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .link:hover {
+    color: inherit;
+    text-decoration: none;
+  }
