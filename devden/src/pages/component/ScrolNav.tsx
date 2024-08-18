@@ -31,7 +31,7 @@ const ScrollNav: React.FC = () => {
             </Link>
           </li>
           <li className={styles.navItem}>
-            <Link href="/javascript/basics" legacyBehavior>
+            <Link href="/javascript-basics" legacyBehavior>
               <div
                 className={styles.navLink}
                 onClick={() => handleDropdownClick("basics")}
@@ -45,62 +45,65 @@ const ScrollNav: React.FC = () => {
             {openDropdowns.basics && (
               <ul className={styles.dropdown}>
                 <li className={styles.dropdownItem}>
-                  <Link href="/concept/Variables" legacyBehavior>
+                  <Link href="/javascript-basics/variables" legacyBehavior>
                     <a className={styles.navLink}># Variables (0/11)</a>
                   </Link>
                 </li>
                 <li className={styles.dropdownItem}>
-                  <Link href="/concept/Variables" legacyBehavior>
+                  <Link href="/javascript-basics/booleans" legacyBehavior>
                     <a className={styles.navLink}># Booleans (0/5)</a>
                   </Link>
                 </li>
                 <li className={styles.dropdownItem}>
-                  <Link href="/concept/Variables" legacyBehavior>
+                  <Link href="/javascript-basics/operator" legacyBehavior>
                     <a className={styles.navLink}># Operators (0/19)</a>
                   </Link>
                 </li>
                 <li className={styles.dropdownItem}>
-                  <Link href="/concept/Variables" legacyBehavior>
+                  <Link href="/javascript-basics/strings" legacyBehavior>
                     <a className={styles.navLink}># Strings (0/7)</a>
                   </Link>
                 </li>
                 <li className={styles.dropdownItem}>
-                  <Link href="/concept/Variables" legacyBehavior>
+                  <Link href="/javascript-basics/conditionals" legacyBehavior>
                     <a className={styles.navLink}># Conditionals (0/9)</a>
                   </Link>
                 </li>
                 <li className={styles.dropdownItem}>
-                  <Link href="/concept/Variables" legacyBehavior>
+                  <Link href="/javascript-basics/functions-I" legacyBehavior>
                     <a className={styles.navLink}># Functions I (0/11)</a>
                   </Link>
                 </li>
                 <li className={styles.dropdownItem}>
-                  <Link href="/concept/Variables" legacyBehavior>
+                  <Link href="/javascript-basics/arrays" legacyBehavior>
                     <a className={styles.navLink}># Arrays (0/8)</a>
                   </Link>
                 </li>
                 <li className={styles.dropdownItem}>
-                  <Link href="/concept/Variables" legacyBehavior>
+                  <Link href="/javascript-basics/objects" legacyBehavior>
                     <a className={styles.navLink}># Objects (0/6)</a>
                   </Link>
                 </li>
                 <li className={styles.dropdownItem}>
-                  <Link href="/concept/Variables" legacyBehavior>
+                  <Link href="/javascript-basics/loops" legacyBehavior>
                     <a className={styles.navLink}># Loops (0/6)</a>
                   </Link>
                 </li>
                 <li className={styles.dropdownItem}>
-                  <Link href="/concept/Variables" legacyBehavior>
+                  <Link href="/javascript-basics/scope" legacyBehavior>
                     <a className={styles.navLink}># Scope (0/6)</a>
                   </Link>
                 </li>
                 <li className={styles.dropdownItem}>
-                  <Link href="/concept/Variables" legacyBehavior>
+                  <Link href="/javascript-basics/functions_II" legacyBehavior>
                     <a className={styles.navLink}># Functions II (0/8)</a>
                   </Link>
                 </li>
                 <li className={styles.dropdownItem}>
-                  <Link href="/concept/Variables" legacyBehavior>
+                  <Link
+                    href="/javascript-basics/asynchronous-javascript"
+                    legacyBehavior
+                  >
                     <a className={styles.navLink}>
                       # Asynchronous Javascript (0/12)
                     </a>
@@ -110,7 +113,7 @@ const ScrollNav: React.FC = () => {
             )}
           </li>
           <li className={styles.navItem}>
-            <Link href="/javascript/dom" legacyBehavior>
+            <Link href="/javascript-DOM" legacyBehavior>
               <div
                 className={styles.navLink}
                 onClick={() => handleDropdownClick("dom")}
@@ -158,7 +161,7 @@ const ScrollNav: React.FC = () => {
             )}
           </li>
           <li className={styles.navItem}>
-            <Link href="/javascript/practice" legacyBehavior>
+            <Link href="/javascript-Practice" legacyBehavior>
               <div
                 className={styles.navLink}
                 onClick={() => handleDropdownClick("practice")}
@@ -204,14 +207,14 @@ const ScrollNav: React.FC = () => {
             )}
           </li>
           <li className={styles.navItem}>
-            <Link href="/javascript/challenge-rush" legacyBehavior>
+            <Link href="/Chalenge-Rush" legacyBehavior>
               <a className={styles.navLink}>
                 <FcElectricity /> Challenge Rush
               </a>
             </Link>
           </li>
           <li className={styles.navItem}>
-            <Link href="/javascript/login" legacyBehavior>
+            <Link href="/Login" legacyBehavior>
               <a className={styles.navLink}>
                 {" "}
                 <RiAdminFill /> Login

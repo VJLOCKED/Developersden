@@ -1,6 +1,6 @@
 import React from "react";
-import Link from "next/link";
 import styles from "../../styles/basic.module.css";
+import Breadcrumb from "../component/Breadcrumb";
 
 const JavascriptDOM: React.FC = () => {
   const items = [
@@ -37,24 +37,23 @@ const JavascriptDOM: React.FC = () => {
   ];
 
   return (
-    <Link href="/concept/Selectors" legacyBehavior>
-      <div className={styles.container}>
-        {items.map((item, index) => (
-          <div key={index} className={styles.item}>
-            <div className={styles.circleContainer}>
-              <div className={styles.circle}>
-                <span>{item.progress}</span>
-              </div>
-              {index < items.length - 1 && <div className={styles.line}></div>}
+    <div className={styles.container}>
+      <Breadcrumb />
+      {items.map((item, index) => (
+        <div key={index} className={styles.item}>
+          <div className={styles.circleContainer}>
+            <div className={styles.circle}>
+              <span>{item.progress}</span>
             </div>
-            <div className={styles.content}>
-              <h2>{item.label}</h2>
-              <p>{item.description}</p>
-            </div>
+            {index < items.length - 1 && <div className={styles.line}></div>}
           </div>
-        ))}
-      </div>
-    </Link>
+          <div className={styles.content}>
+            <h2>{item.label}</h2>
+            <p>{item.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
   );
 };
 
