@@ -1,0 +1,62 @@
+.card {
+    background: #1e1e1e;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    max-width: 600px;
+    width: 100%;
+    margin-left: 350px;
+  }
+  
+  .codeBlock {
+    background: #2d2d2d;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    width: 100%;
+    color: white;
+    font-family: monospace;
+    font-size: 1em;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .testCases {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+  }
+  
+  .testCase {
+    margin: 5px 0;
+  }
+  
+  .button {
+    background-color: #0070f3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .button:hover {
+    background-color: #005bb5;
+  }
+  
+  .output {
+    background: #2d2d2d;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    color: white;
+    font-family: monospace;
+    font-size: 1em;
+    margin-top: 20px;
+  }
+  
