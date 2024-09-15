@@ -17,7 +17,7 @@ const Variables: React.FC = () => {
       label: "Reassign a value to a variable",
       progress: <BiChevronRightSquare />,
       description: "Lesson",
-      link: "/chapters/chapter2",
+      link: "/javascript-basics/variables/chapter-2",
     },
     {
       label: "Assign a value to a variable",

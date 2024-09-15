@@ -1,31 +1,19 @@
-import React, { useState } from 'react';
-import styles from '../../styles/WelcomePage.module.css'; // Adjust the relative path if needed
+import React from 'react';
+import Link from 'next/link';
+import styles from '../../styles/EndPage.module.css'; // Adjust the path if necessary
 
-interface WelcomePageProps {
-  text: string;
+interface EndPageProps {
   title: string;
   description: string;
   buttonText: string;
-  onContinue: () => void; // Added this prop to handle continue button click
+  link: string; // Add this prop to dynamically set the link
 }
 
-const WelcomePage: React.FC<WelcomePageProps> = ({ title, description, buttonText, onContinue }) => {
-  const [message, setMessage] = useState<string>('');
-  const [startMessage, setStartMessage] = useState<string>('');
-
-  const handleClick = () => {
-    setMessage(`Welcome, ${title}!`);
-  };
-
-  const handleStart = () => {
-    setStartMessage('');
-    onContinue(); // Call the onContinue prop when start button is clicked
-  };
-
+const EndPage: React.FC<EndPageProps> = ({ title, description, buttonText, link }) => {
   return (
     <div className={styles.container}>
       <div className={styles.icon}>
-        {/* SVG Graduation Cap */}
+        {/* SVG Trophy Icon */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -43,11 +31,10 @@ const WelcomePage: React.FC<WelcomePageProps> = ({ title, description, buttonTex
       </div>
       <h1 className={styles.title}>{title}</h1>
       <p className={styles.text}>{description}</p>
-      <button onClick={handleStart} className={styles.button}>{buttonText}</button>
-      {message && <p>{message}</p>}
-      {startMessage && <p className={styles.text}>{startMessage}</p>}
+      <Link href={link} passHref className={styles.button}>{buttonText}
+      </Link>
     </div>
   );
 };
 
-export default WelcomePage;
+export default EndPage;

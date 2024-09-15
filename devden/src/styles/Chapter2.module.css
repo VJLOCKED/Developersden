@@ -1,0 +1,42 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #0a1e30;
+    color: #fff;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .contentWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 800px; /* Constrain content width */
+    margin: 0 auto;
+  }
+  
+  .nextButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #FFAC47;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    z-index: 101; 
+  }
+  
+  .nextButton:hover {
+    background-color: #FF9021;
+  }
+  
+  .disabled {
+    background-color: #d3d3d3;
+    cursor: not-allowed;
+  }
+  

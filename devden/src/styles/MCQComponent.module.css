@@ -1,0 +1,138 @@
+
+
+   .mcqContainer {
+    padding: 20px;
+    background-color: #0a0a23; /* Background color */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+  }
+  
+  .mcqHeader {
+    margin-bottom: 20px;
+  }
+  
+  .mcqTitle {
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff; /* Text color */
+    font-family: 'Source Code Pro', monospace; /* Match font family to code */
+  }
+  
+  .mcqQuestion {
+    margin-bottom: 20px; /* Ensure proper gap between question and options */
+    font-size: 16px;
+    color: #e5e5e5; /* Text color */
+    font-family: 'Source Code Pro', monospace; /* Match font family to code */
+    padding: 10px 0; /* Padding for spacing */
+  }
+  
+  .mcqCodeContainer {
+    background-color: #282c34;
+    color: #e5e5e5;
+    padding: 10px;
+    border-radius: 4px;
+    font-family: 'Source Code Pro', monospace; /* Ensure consistency with code */
+    margin-bottom: 15px; /* Gap between code and options */
+  }
+  
+  .mcqLanguage {
+    font-size: 14px;
+    color: #aaa;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  }
+  
+  .mcqForm {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .mcqOption {
+    display: flex;
+    align-items: center;
+    background-color: #282c34;
+    padding: 12px;
+    border: 1px solid black;
+    border-radius: 8px;
+    margin-bottom: 12px; /* Space between options */
+    transition: border-color 0.3s, background-color 0.3s;
+    cursor: pointer;
+    box-sizing: border-box;
+    position: relative;
+  }
+  
+  .mcqOptionCorrect {
+    border: 2px solid #28a745;
+  }
+  
+  .mcqOptionIncorrect {
+    border: 2px solid #dc3545;
+  }
+  
+  .mcqInput {
+    display: none;
+  }
+  
+  .mcqLabel {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+  }
+  
+  .mcqLabelBox {
+    margin-right: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    background-color: #fff;
+    transition: border-color 0.3s, background-color 0.3s;
+  }
+  
+  .mcqOptionCorrect .mcqLabelBox {
+    border-color: #28a745;
+    background-color: #28a745;
+  }
+  
+  .mcqOptionIncorrect .mcqLabelBox {
+    border-color: #dc3545;
+    background-color: #dc3545;
+  }
+  
+  .mcqLabelCode {
+    display: flex;
+    flex-direction: column;
+    margin-left: 12px;
+    width: 100%;
+    position: relative;
+  }
+  
+  .mcqLabelCodeText {
+    font-family: 'Source Code Pro', monospace; /* Match font family to code */
+    font-size: 14px;
+    color: #e5e5e5;
+    margin-bottom: 4px;
+  }
+  
+  .mcqLabelCodeConsole {
+    font-size: 12px;
+    color: #aaa;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  }
+  
+  .mcqCheckmark {
+    display: none; /* Removed from display */
+  }
+  
+  .mcqCrossmark {
+    display: none; /* Removed from display */
+  }
+  

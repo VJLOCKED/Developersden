@@ -1,16 +1,17 @@
-'use client'
-
 import React from 'react';
 import styles from '../../styles/TextComponent.module.css';
 
 interface TextComponentProps {
-  text: string;
+  code?: string;  // Optional code prop
 }
 
-const TextComponent: React.FC<TextComponentProps> = ({ text }) => {
+const TextComponent: React.FC<TextComponentProps> = ({ code }) => {
   return (
-    <div className={styles.textComponent}>
-      <p className={styles.text}>{text}</p>
+    <div className={styles.codeBlock}>
+      <div className={styles.codeContainer}>
+        <code dangerouslySetInnerHTML={{ __html: code || '' }} />
+      </div>
+      <div className={styles.languageLabel}>JavaScript</div>
     </div>
   );
 };

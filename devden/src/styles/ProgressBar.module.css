@@ -1,0 +1,14 @@
+.progressContainer {
+    position: relative;
+    height: 8px;
+    background-color: #ccc;
+    margin: 10px 0;
+    margin-left: 100px; /* Adjust according to your sidebar width */
+  }
+  
+  .progressBar {
+    height: 100%;
+    background-color: #ffcc00;
+    transition: width 0.5s ease;
+  }
+  

@@ -1,0 +1,20 @@
+.inputContainer {
+  width: 100%;
+  padding: 0; /* Ensure no padding on the container */
+  margin: 10px 0; /* Adds space above and below the container */
+}
+
+.textarea {
+  width: 100%; /* Make textarea take up full width of the container */
+  border: none;
+  outline: none;
+  background: none;
+  color: #fff;
+  font-size: 16px;
+  resize: none; /* Prevent the user from resizing the textarea */
+  padding: 0; /* Remove default padding */
+  line-height: 1.5; /* Adjust line height for readability */
+  overflow: hidden; /* Hide scrollbar */
+  white-space: pre-wrap; /* Preserve whitespace and wrap text */
+  margin: 0; /* Ensure no margin around the textarea */
+}

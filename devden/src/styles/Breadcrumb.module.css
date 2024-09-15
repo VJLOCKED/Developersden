@@ -1,4 +1,4 @@
-.breadcrumb {
+/* .breadcrumb {
     margin: 16px 0;
     font-size: 14px;
   }
@@ -33,13 +33,16 @@
       font-size: 12px;
     }
   }
-  
+   */
 
 
-
-   /* .breadcrumb {
-    margin: 16px 0;
-    font-size: 14px;
+   .breadcrumb {
+    display: flex;
+    justify-content: center; /* Center the breadcrumb */
+    align-items: center;
+    margin: 20px 0; /* Slightly increase the margin */
+    font-size: 16px; /* Refine the font size for better readability */
+    font-family: 'Arial', sans-serif; /* Use a clean font */
   }
   
   .breadcrumbList {
@@ -47,33 +50,47 @@
     display: flex;
     flex-wrap: wrap;
     padding: 0;
+    margin: 0;
   }
   
-  .breadcrumbItem {
-    margin-right: 8px;
+  .breadcrumbList li {
+    margin-right: 12px; /* Increase spacing between items */
+    position: relative;
   }
   
-  .breadcrumbItem::after {
-    content: '>';
-    margin-left: 8px;
+  .breadcrumbList li::after {
+    content: '/'; /* Change arrow to slash for cleaner look */
+    margin-left: 12px; /* Adjust spacing between items */
+    color: #999; /* Use a lighter color for the separator */
   }
   
-  .breadcrumbItem:last-child::after {
-    content: '';
+  .breadcrumbList li:last-child::after {
+    content: ''; /* Remove separator after the last item */
   }
   
-  .breadcrumbItem a {
-    color: #1e90ff;
+  .breadcrumbList li a {
+    color: #0070f3; /* Updated color for a more modern look */
     text-decoration: none;
+    font-weight: 500; /* Make the link text slightly bolder */
+    transition: color 0.3s ease; /* Add a smooth color transition */
   }
   
-  .breadcrumbItem span {
+  .breadcrumbList li a:hover {
+    color: #005bb5; /* Darker color on hover for the link */
+  }
+  
+  .breadcrumbList li span {
     font-weight: bold;
+    color: #333; /* Make the current page bolder and darker */
   }
   
   @media (max-width: 600px) {
     .breadcrumb {
-      font-size: 12px;
+      font-size: 14px; /* Adjust font size on smaller screens */
     }
-  } */
+  
+    .breadcrumbList li::after {
+      margin-left: 8px;
+    }
+  }
   
