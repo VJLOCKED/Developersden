@@ -1,53 +1,51 @@
 .challengeContainer {
-  background-color: #0a0a23; /* Same as container background */
-  color: #ffdd00; /* Text color */
-  padding: 40px;
+  background-color: #0a0a23;
+  color: #ffdd00;
+  padding: 30px 40px;
   border-radius: 10px;
-  margin: 10px 0; /* Gap above and below the container */
+  margin: 20px 0;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   overflow-x: hidden;
+  max-width: 900px;
 }
 
 .codeBlock {
-  background-color: #1a202c; /* Dark blue-gray background */
-  color: #f0f0f0; /* Light text color */
-  padding: 1.5rem; /* Padding around the code */
-  border-radius: 0.5rem; /* Rounded corners */
-  overflow-x: auto; /* Horizontal scroll if code overflows */
+  background-color: #1a202c;
+  color: #f0f0f0;
+  padding: 15px;
+  border-radius: 0.5rem;
+  overflow-x: auto;
   width: 100%;
   position: relative;
-  margin-top: 20px; /* Space above the code block */
+  margin-top: 20px;
+  box-sizing: border-box;
 }
 
-.codeContainer {
-  font-size: 1rem; /* Improved font size */
-  white-space: pre; /* Preserve whitespace and formatting */
+.codeLine {
+  font-size: 0.9rem; /* Consistent font size */
+  white-space: pre-wrap;
   width: 100%;
-  background: transparent; /* Ensure the background of textarea is transparent */
-  border: none; /* Remove border from textarea */
-  color: inherit; /* Inherit text color */
-  resize: none; /* Prevent resizing */
+  background: transparent; /* No background */
+  border: none; /* No border */
   outline: none; /* Remove focus outline */
-  font-family: 'Fira Code', monospace; /* Monospaced font for code */
-}
-
-.languageLabel {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  font-size: 0.75rem; /* Smaller font size for the language label */
-  color: #718096; /* Light gray color for the label */
-  padding: 0.25rem;
-  background-color: #2d3748; /* Darker background for label */
-  border-top-left-radius: 0.5rem; /* Rounded corner for the label */
+  padding: 0; /* Remove padding */
+  margin: 0; /* No margin */
+  color: inherit; /* Inherit text color */
+  resize: none; /* Prevent manual resizing */
+  font-family: 'Fira Code', monospace;
+  line-height: 1.4; /* Reduced line height */
+  min-height: 1rem; /* Set minimum height for text area */
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
+  overflow: hidden; /* Hide overflow to ensure the compact size */
+  text-align: left; /* Align text to the left */
 }
 
 .runButton {
-  margin-top: 20px; /* Space between code block and button */
+  margin-top: 20px;
   padding: 10px 20px;
   background-color: #ffac47;
   border: none;
@@ -62,44 +60,37 @@
 }
 
 .outputBlock {
-  background-color: #1a202c; /* Dark blue-gray background */
-  color: #f0f0f0; /* Light text color */
-  padding: 1.5rem; /* Padding around the code */
-  border-radius: 0.5rem; /* Rounded corners */
-  overflow-x: auto; /* Horizontal scroll if code overflows */
+  background-color: #1a202c;
+  color: #f0f0f0;
+  padding: 15px;
+  border-radius: 0.5rem;
+  overflow-x: auto;
   width: 100%;
   position: relative;
-  margin-top: 20px; /* Space above the output block */
-  min-height: 8rem; /* Minimum height for the output block */
+  margin-top: 20px;
+  min-height: 2rem;
+  max-height: 8rem;
+  overflow-y: auto;
 }
 
 .outputContainer {
-  font-size: 1rem; /* Improved font size */
-  white-space: pre; /* Preserve whitespace and formatting */
-  width: 100%;
-  background: transparent; /* Ensure the background of output is transparent */
-  border: none; /* Remove border */
-  color: inherit; /* Inherit text color */
-  resize: none; /* Prevent resizing */
-  font-family: 'Fira Code', monospace; /* Monospaced font for output */
+  font-size: 0.9rem;
+  white-space: pre-wrap;
+  background: transparent;
+  border: none;
+  color: inherit;
+  resize: none;
+  font-family: 'Fira Code', monospace;
+  outline: none;
 }
 
-.readOnlyLine {
-  background-color: #1a202c; /* Same background color as the code block */
-  color: #f0f0f0; /* Text color */
-  padding: 1.5rem; /* Same padding as the code block */
-  border-radius: 0.5rem; /* Rounded corners */
-  overflow-x: auto; /* Horizontal scroll if the content overflows */
-  width: 100%;
-  margin-top: 10px; /* Space between lines */
-  font-family: 'Fira Code', monospace; /* Monospaced font for code */
-  white-space: pre-wrap; /* Preserve whitespace but wrap text */
-  text-align: left; /* Align text to the left */
-  box-sizing: border-box; /* Ensure padding does not affect width */
-}
-
-/* Ensure both readOnlyLine and codeContainer are aligned similarly */
-.codeContainer,
-.readOnlyLine {
-  box-sizing: border-box; /* Ensure padding does not affect width */
+.languageLabel {
+  position: absolute;
+  bottom: -10px;
+  right: 0;
+  font-size: 0.75rem;
+  color: #718096;
+  padding: 0.25rem;
+  background-color: #2d3748;
+  border-top-left-radius: 0.5rem;
 }
