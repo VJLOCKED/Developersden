@@ -8,8 +8,8 @@ const Chapter2 = () => {
       heading="Reassign a value to a variable"
       question="Assign a new value to the variable num. The code will not work the way it is. Find the mistake and fix it. Execute the corrected code."
       initialInput={initialInput}
-      editableLines={[false,true,false]} // Making only the second line editable
-    />
+      editableLines={[false, true, false]} // Making only the second line editable
+      nextLink={'/javascript-basics/variables'}    />
   );
 };
 

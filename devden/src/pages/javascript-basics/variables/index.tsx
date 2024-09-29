@@ -40,7 +40,7 @@ const Variables: React.FC = () => {
     {
       label: "Create variables with const",
       progress: <BiChevronRightSquare />,
-      description: "Challenge.",
+      description: "Lesson.",
       link: "/javascript-basics/variables/chapter-6",
     },
     {

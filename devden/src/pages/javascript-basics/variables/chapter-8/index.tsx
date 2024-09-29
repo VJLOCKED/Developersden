@@ -9,6 +9,7 @@ const Chapter2 = () => {
       question="Here, we have two variables numOne and numTwo. numOne already has a value. Assign numTwo the value of numOne and run the code."
       initialInput={initialInput}
       editableLines={[false,false,true,false]} // Making only the second line editable
+      nextLink={'/javascript-basics/variables'} 
     />
   );
 };

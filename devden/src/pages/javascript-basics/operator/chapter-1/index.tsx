@@ -14,35 +14,93 @@ const Chapter1: React.FC = () => {
   const [currentStep, setCurrentStep] = useState<number>(1);
   const [showComponent, setShowComponent] = useState<boolean[]>(new Array(13).fill(false));
   const [challengeSuccess, setChallengeSuccess] = useState<boolean[]>(new Array(4).fill(false));
-  const [mcqSuccess, setMcqSuccess] = useState<boolean[]>(new Array(3).fill(false)); // Change to an array for each MCQ
-
+  const [mcqSuccess, setMcqSuccess] = useState<boolean>(false);
   const [showEndPage, setShowEndPage] = useState<boolean>(false);
 
   const router = useRouter();
   const componentRef = useRef<HTMLDivElement>(null);
 
   const components = [
-    { type: 'welcome', title: 'Create variables with const', description: "Now, we will learn how to create variables with const and look at the differences between let and const.", buttonText: 'Start' },
-    { type: 'input', texts: ['• So far, we have created our variables with the let keyword.'] },
-    { type: 'text', code: 'let test = 5;' },
-    { type: 'input', texts: ['• You can also create a variable with the const keyword.'] },
-    { type: 'text', code: 'const test = 5;' },
-    { type: 'input', texts: ['• The difference between the two is that you can not assign a new value to a variable that was created with const.'] },
-    { type: 'input', texts: ['• Try it out. Here, we attempt to assign a new value to a variable that was created with const.' ]},
-    { type: 'challenge', initialInput: 'const test = 1;\ntest = 2;' }, 
-    { type: 'input', texts: ['• Correct! It throws an error.'] },
-    { type: 'input', texts: ["• Let's wrap this up with some questions."] },
-    { type: 'mcq', question: "What will be the output?", codeSnippet: "let num;\nnum = 2;\nconsole.log(num);", options: [{ id: '9536450', label: '2', value: '0' }, { id: '9536451', label: 'undefined', value: '1' }], correctAnswer: '0' },
-    { type: 'mcq', question: "What will be the output?", codeSnippet: "const num;\nnum = 5;\nconsole.log(num);", options: [{ id: '9536455', label: '5', value: '1' }, { id: '9536456', label: 'Uncaught SyntaxError: Missing initializer in const declaration', value: '0' }], correctAnswer: '0' },
-    { type: 'mcq', question: "What will be the output?", codeSnippet: "const num = 2;\nnum = 6;\nconsole.log(num);", options: [{ id: '9536459', label: '2', value: '1' }, { id: '9536461', label: 'Uncaught TypeError: Assignment to constant variable', value: '0' }], correctAnswer: '0' },
-    { type: 'input', texts: ["• But, why should you use const instead of let?"] },
-    { type: 'input', texts: ['• It is considered good practice to use const for variables whose value will never change.'] },
-    { type: 'input', texts: ['• For example, if you want to store the number pi you would use const to store it because pi never changes.'] },
-    { type: 'text', code: 'const pi = 3.14159;' },
-    { type: 'input', texts: ['• Doing so can prevent your code from behaving unexpectedly.'] },
+    {
+      type: "welcome",
+      title: "Introduction to Javascript Comparison Operators",
+      description: "In this lesson you will learn how to compare values using comparison operators in JavaScript.",
+      buttonText: "Start",
+    },
+    {
+      type: "input",
+      texts: [
+        "• We already know how to create variables and how to assign them numbers.",
+        "•Now, we will learn how to compare these variables and their values with each other. We can do so by using comparison operators",
+        "•The first operator we explore is the Equal to (==) operator. It checks if two values are equal. For example:",
+      ],
+    },
+    { type: "text", code: "2 == 2;" },
+    { type: "input", texts: ["• Can you guess what the output will be?"] },
+    {
+      type: "challenge",
+      initialInput: "const priceOne = 5;\nconst priceTwo = 10;\nconsole.log(priceOne == priceTwo);",
+    },
+    {
+      type: "input",
+      texts: [
+        "• Here, we used the Equal to (==) operator to check if the values of priceOne and priceTwo are equal.",
+        "• Comparison operators always return a boolean value. In this case, we got false because priceOne and priceTwo are not equal.",
+        "• Now, priceOne and priceTwo have the same value. Let’s see what the output will be:",
+      ],
+    },
+    {
+      type: "challenge",
+      initialInput: "const priceOne = 10;\nconst priceTwo = 10;\nconsole.log(priceOne == priceTwo);",
+    },
+    {
+      type: "input",
+      texts: [
+        "• The second operator we explore is the Not Equal to (!=) operator. It checks if two values are not equal. For example:",
+      ],
+    },
+    { type: "text", code: "2 != 2;" },
+    {
+      type: "input",
+      texts: ["• Can you guess what will be the output?"],
+    },
+    {
+      type: "challenge",
+      initialInput: "const priceOne = 5;\nconst priceTwo = 10;\nconsole.log(priceOne != priceTwo);",
+    },
+    {
+      type: "mcq",
+      question: "What will be the output?",
+      codeSnippet: `console.log(10 == 10);`,
+      options: [
+        { id: "9536450", label: "true", value: "0" },
+        { id: "9536451", label: "false", value: "1" },
+      ],
+      correctAnswer: "0",
+    },
+    {
+      type: "mcq",
+      question: "What will be the output?",
+      codeSnippet: `console.log(10 != 11);`,
+      options: [
+        { id: "9536460", label: "true", value: "0" },
+        { id: "9536461", label: "false", value: "1" },
+      ],
+      correctAnswer: "0",
+    },
+    {
+      type: "mcq",
+      question: "What will be the output?",
+      codeSnippet: `console.log(false == false);`,
+      options: [
+        { id: "9536470", label: "true", value: "0" },
+        { id: "9536471", label: "false", value: "1" },
+      ],
+      correctAnswer: "0",
+    },
   ];
 
-  const endPageLink = '/javascript-basics/variables';
+  const endPageLink = "/javascript-basics/operator";
 
   useEffect(() => {
     if (currentStep > 1) {
@@ -57,7 +115,7 @@ const Chapter1: React.FC = () => {
   }, [currentStep]);
 
   useEffect(() => {
-    if (currentStep === components.length && challengeSuccess.every(success => success) && mcqSuccess.every(success => success)) {
+    if (currentStep === components.length && challengeSuccess.every(success => success) && mcqSuccess) {
       setShowEndPage(true);
     }
   }, [currentStep, challengeSuccess, mcqSuccess]);
@@ -90,12 +148,8 @@ const Chapter1: React.FC = () => {
     });
   };
 
-  const handleMcqSuccess = (index: number) => {
-    setMcqSuccess(prev => {
-      const newSuccess = [...prev];
-      newSuccess[index] = true;
-      return newSuccess;
-    });
+  const handleMcqSuccess = () => {
+    setMcqSuccess(true);
   };
 
   const renderComponent = (
@@ -118,7 +172,6 @@ const Chapter1: React.FC = () => {
           <Challenge
             initialInput={component.initialInput || ''}
             onSuccess={() => handleChallengeSuccess(components.indexOf(component))}
-            onFailure={() => handleChallengeSuccess(components.indexOf(component))} // Continue on failure
           />
         );
       case 'text':
@@ -132,7 +185,7 @@ const Chapter1: React.FC = () => {
             codeSnippet={component.codeSnippet}
             options={component.options}
             correctAnswer={component.correctAnswer}
-            onCorrectSelection={() => handleMcqSuccess(components.indexOf(component))}
+            onCorrectSelection={handleMcqSuccess}
           />
         ) : null;
       default:
@@ -144,7 +197,7 @@ const Chapter1: React.FC = () => {
 
   const currentComponent = components[currentStep - 1];
   const isChallengeOrMcq = currentComponent.type === 'challenge' || currentComponent.type === 'mcq';
-  const isButtonEnabled = !isChallengeOrMcq || (isChallengeOrMcq && (currentComponent.type === 'challenge' ? challengeSuccess[components.indexOf(currentComponent)] : mcqSuccess[components.indexOf(currentComponent)]));
+  const isButtonEnabled = !isChallengeOrMcq || (isChallengeOrMcq && (currentComponent.type === 'challenge' ? challengeSuccess[components.indexOf(currentComponent)] : mcqSuccess));
 
   return (
     <div>
