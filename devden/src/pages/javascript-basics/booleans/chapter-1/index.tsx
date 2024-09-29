@@ -23,15 +23,15 @@ const Chapter1: React.FC = () => {
   const components = [
     { type: 'welcome', title: 'The console and introduction to variables', description: "Let's make our first steps in JavaScript", buttonText: 'Start' },
     { type: 'input', texts: ['• By assigning a number to a variable, the variable automatically has the type Number.', '• Press the button to run the following code snippet:'] },
-    { type: 'challenge', initialInput: 'console.log(1);' },  // Challenge is now read-only
+    { type: 'challenge', initialInput: 'console.log(1);', editableLines: [true] }, // Example editableLines array
     { type: 'input', texts: ['• As you can see, console.log() simply displays information in your JavaScript console — in this case the value 1.', '• We will use console.log() as a tool to test our code.', '• Great! Now, we can talk about JavaScript variables.', '• Variables are containers that store information for later use.', "• Let's create our first variable:"] },
     { type: 'text', code: 'let test;' },
     { type: 'input', texts: ['• We use the let keyword to declare a variable with the name test. Declaring a variable is JavaScript slang for creating a variable.', '• But, what happens if we use console.log() to log our new variable?'] },
-    { type: 'challenge', initialInput: 'let test;\nconsole.log(test);' },  // Challenge is now read-only
+    { type: 'challenge', initialInput: 'let test;\nconsole.log(test);', editableLines: [true, false] }, // Example editableLines array
     { type: 'input', texts: ['• The console prints undefined. This is because we have not initialized our variable. Initializing a variable is the process of assigning a value to it.', '• We can assign a value to a variable with the assignment operator =.'] },
-    { type: 'challenge', initialInput: 'let test;\ntest = 1;\nconsole.log(test);' },  // Challenge is now read-only
+    { type: 'challenge', initialInput: 'let test;\ntest = 1;\nconsole.log(test);', editableLines: [true, true, false] }, // Example editableLines array
     { type: 'input', texts: ['• Great! Now, we have created a new variable and assigned it the value 1. We have also used console.log() to access this value.', '• You can also assign a value to a variable directly when you create it.'] },
-    { type: 'challenge', initialInput: 'let test = 1;\nconsole.log(test);' },  // Challenge is now read-only
+    { type: 'challenge', initialInput: 'let test = 1;\nconsole.log(test);', editableLines: [true, false] }, // Example editableLines array
     { type: 'input', texts: ["• Awesome! Let's wrap this up with some questions."] },
     { type: 'mcq', question: "What will be the output of the following code?", codeSnippet: `let num;\nconsole.log(num);`, options: [{ id: '9536450', label: 'undefined', value: '0' }, { id: '9536451', label: 'num', value: '1' }], correctAnswer: '0' }
   ];
@@ -95,6 +95,7 @@ const Chapter1: React.FC = () => {
       texts?: string[];
       code?: string;
       initialInput?: string;
+      editableLines?: boolean[];
       question?: string;
       codeSnippet?: string;
       options?: Option[];
@@ -107,7 +108,9 @@ const Chapter1: React.FC = () => {
         return (
           <Challenge
             initialInput={component.initialInput || ''}
+            editableLines={component.editableLines || []}
             onSuccess={() => handleChallengeSuccess(components.indexOf(component))}
+            onFailure={() => handleChallengeSuccess(components.indexOf(component))} // Continue on failure
           />
         );
       case 'text':
@@ -129,6 +132,7 @@ const Chapter1: React.FC = () => {
     }
   };
   
+
   const progressPercentage = ((currentStep - 1) / (components.length - 1)) * 100;
 
   const currentComponent = components[currentStep - 1];

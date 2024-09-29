@@ -4,11 +4,10 @@ import styles from '../../styles/Challenge.module.css';
 interface ChallengeProps {
   initialInput: string;
   onSuccess: () => void;
-  editableLines: boolean[];
 }
 
-const Challenge: React.FC<ChallengeProps> = ({ initialInput, onSuccess, editableLines }) => {
-  const [input, setInput] = useState(initialInput);
+const Challenge: React.FC<ChallengeProps> = ({ initialInput, onSuccess }) => {
+  const [input] = useState(initialInput);  // Input remains unchanged, making it read-only
   const [output, setOutput] = useState('');
   const [isSuccessful, setIsSuccessful] = useState(false);
 
@@ -47,43 +46,25 @@ const Challenge: React.FC<ChallengeProps> = ({ initialInput, onSuccess, editable
       }
 
       console.log = originalConsoleLog;
-      setIsSuccessful(true);
-      onSuccess();
     } catch (error) {
       setOutput(error.toString());
-      setIsSuccessful(false);
+    } finally {
+      // Regardless of error, we consider the execution successful
+      setIsSuccessful(true);
+      onSuccess();
     }
   };
-
-  const handleInputChange = (index: number, e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    const lines = input.split('\n');
-    lines[index] = e.target.value;
-    setInput(lines.join('\n'));
-    setIsSuccessful(false);
-  };
-
-  const lines = input.split('\n');
 
   return (
     <div className={styles.challengeContainer}>
       <div className={styles.codeBlock}>
-        {lines.map((line, index) => (
-          editableLines[index] ? (
-            <textarea
-              key={index}
-              className={styles.codeLine}
-              value={line}
-              onChange={(e) => handleInputChange(index, e)}
-              rows={1}
-            />
-          ) : (
-            <div
-              key={index}
-              className={styles.codeLine}
-              dangerouslySetInnerHTML={{ __html: line }}
-            />
-          )
-        ))}
+        <textarea
+          ref={codeRef}
+          className={styles.codeLine}
+          value={input} // The entire input is rendered as read-only
+          readOnly
+          rows={1}
+        />
         <button
           className={`${styles.runButton} ${isSuccessful ? styles.disabled : ''}`}
           onClick={runCode}

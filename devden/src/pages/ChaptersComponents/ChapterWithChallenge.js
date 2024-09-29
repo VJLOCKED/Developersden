@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import styles from '../../styles/ChapterWithChallenge.module.css'; // Ensure your path matches
-import Challenge from './Challenge'; // Import your Challenge component
+import Challenge2 from './Challenge2'; // Import your Challenge component
 import Breadcrumb from '@/pages/component/Breadcrumb';
 
 const ChapterWithChallenge = ({ heading, question, initialInput, editableLines }) => {
@@ -9,9 +9,15 @@ const ChapterWithChallenge = ({ heading, question, initialInput, editableLines }
   const [showOverlay, setShowOverlay] = useState(false);
   const router = useRouter();
 
-  const handleSuccess = () => {
-    setChallengeSuccess(true);
-    setShowOverlay(true);
+  const handleSuccess = (output) => {
+    // Ensure that 'undefined' is not part of the output
+    const isValidOutput = output && !output.includes('undefined');
+
+    // Only show the popup if output does not contain 'undefined'
+    if (isValidOutput) {
+      setChallengeSuccess(true);
+      setShowOverlay(true);
+    }
   };
 
   const handleNext = () => {
@@ -23,9 +29,9 @@ const ChapterWithChallenge = ({ heading, question, initialInput, editableLines }
       <Breadcrumb />
       <h1 className={styles.header}>{heading}</h1>
       <div className={styles.question}>{question}</div>
-      <Challenge
+      <Challenge2
         initialInput={initialInput}
-        onSuccess={handleSuccess}
+        onSuccess={handleSuccess} // Pass the output for validation
         editableLines={editableLines}
       />
       {challengeSuccess && (

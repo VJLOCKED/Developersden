@@ -11,7 +11,7 @@ const Booleans: React.FC = () => {
       label: "Understanding Javscript Booleans",
       progress: <BiChevronRightSquare />,
       description: "Lesson",
-      link: "/Chapters/chapter1",
+      link: "/javascript-basics/booleans/chapter-1",
     },
     {
       label: "Assign boolean to a variable",

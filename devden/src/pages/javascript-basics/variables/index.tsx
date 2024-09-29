@@ -53,19 +53,19 @@ const Variables: React.FC = () => {
       label: "Accessing a varable(2)",
       progress: <BiChevronRightSquare />,
       description: "Challenge.",
-      link: "/chapters/chapter8",
+      link: "/javascript-basics/variables/chapter-8",
     },
     {
       label: "Declare a variable and assign a number",
       progress: <BiChevronRightSquare />,
       description: "Challenge.",
-      link: "/chapters/chapter9",
+      link: "/javascript-basics/variables/chapter-9",
     },
     {
       label: "Reassign a value to a variable(2)",
       progress: <BiChevronRightSquare />,
       description: "Challenge.",
-      link: "/chapters/chapter10",
+      link: "/javascript-basics/variables/chapter-10",
     },
     {
       label: "Test: JavaScript variables",
